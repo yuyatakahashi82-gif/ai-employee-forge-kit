@@ -14,4 +14,4 @@ require_var HERMES_HOME || exit 1
 mkdir -p "$DESK"
 sed -e "s/{{OWNER_NAME}}/$OWNER_NAME/g" -e "s#{{HERMES_HOME}}#$HERMES_HOME#g" "$DIR/templates/restart.command.tmpl" > "$DESK/Hermes再起動.command" && chmod +x "$DESK/Hermes再起動.command"
 sed -e "s/{{OWNER_NAME}}/$OWNER_NAME/g" -e "s#{{HERMES_HOME}}#$HERMES_HOME#g" "$DIR/templates/support-primer.ja.md.tmpl" > "$DESK/Hermes不調サポート.md"
-[ -x "$DESK/Hermes再起動.command" ] && [ -f "$DESK/Hermes不調サポート.md" ] && log "完了: 自己保守3層を設置" || { log "FAIL: Desktop ファイル"; exit 1; }
+[ -x "$DESK/Hermes再起動.command" ] && [ -f "$DESK/Hermes不調サポート.md" ] && log "完了: 自己保守3層を設置" || { log "→ 次にやること: $HOME/Desktop の書き込み権限と templates/restart.command.tmpl の存在を確認"; log "FAIL: Desktop ファイル"; exit 1; }

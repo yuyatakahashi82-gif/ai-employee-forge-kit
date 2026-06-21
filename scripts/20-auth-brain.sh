@@ -12,5 +12,5 @@ require_var HERMES_HOME || exit 1
 if "$HERMES_BIN" auth list 2>/dev/null | grep -qi "$BRAIN_PROVIDER"; then
   log "完了: $BRAIN_PROVIDER の credential を確認"
 else
-  log "未完了: owner が 'hermes model' で $BRAIN_PROVIDER のログインを実施（対話のため自動化不可）"; exit 1
+  log "→ 次にやること: owner が対象機のターミナルで 'hermes model' を実行→'OpenAI Codex' を選び ChatGPT でログイン→このscriptを再実行"; log "未完了: owner が 'hermes model' で $BRAIN_PROVIDER のログインを実施（対話のため自動化不可）"; exit 1
 fi

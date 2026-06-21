@@ -10,4 +10,4 @@ log "完了条件: \$HERMES_HOME/SOUL.md が存在し owner 名を含む"
 require_var HERMES_HOME || exit 1
 mkdir -p "$HERMES_HOME"
 sed "s/{{OWNER_NAME}}/$OWNER_NAME/g" "$DIR/templates/soul.md.tmpl" > "$SOUL"
-if [ -f "$SOUL" ] && grep -q "$OWNER_NAME" "$SOUL"; then log "完了: SOUL.md 配置を確認"; else log "FAIL: SOUL.md 未配置"; exit 1; fi
+if [ -f "$SOUL" ] && grep -q "$OWNER_NAME" "$SOUL"; then log "完了: SOUL.md 配置を確認"; else log "→ 次にやること: templates/soul.md.tmpl の存在と $HERMES_HOME の書き込み権限を確認"; log "FAIL: SOUL.md 未配置"; exit 1; fi

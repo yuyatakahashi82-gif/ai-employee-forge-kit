@@ -17,6 +17,9 @@ Discord 常駐・自動学習メモリ・自己保守（自動再起動）まで
 2. `PLAYBOOK.md` の (B) に沿って `scripts/` を順に実行（まず `DRYRUN=1`）
 3. `bash scripts/90-clean-exit-verify.sh forge.vars` が exit 0 を確認
 
+## 運用ツール
+- `scripts/99-health-check.sh forge.vars` 健全性チェック / `scripts/memory-review.sh forge.vars` メモリ棚卸し
+
 ## テスト
 `./run-tests.sh`（外部依存なしの純 bash ハーネス）
 

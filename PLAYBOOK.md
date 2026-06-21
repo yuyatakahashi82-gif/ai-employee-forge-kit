@@ -29,6 +29,11 @@ owner/鍵 → 用途 → 脳(codex OAuth)+fallback(grok) → 人格(分身=SOUL.
 - `scripts/60-self-maintenance.sh`         自己保守 三層（launchd / 再起動.command / サポートカンペ）
 - `scripts/90-clean-exit-verify.sh`        owner専属の痕跡検査（exit 0 必須）＋構築者鍵削除＋リモートログインOFF
 
+## 運用（構築後のメンテ）
+- `scripts/99-health-check.sh forge.vars` — 健全性チェック（脳/gateway/Discord接続/SOUL/認可ID）。不調時/定期に。
+- `scripts/memory-review.sh forge.vars` — 分身が学んだ内容の棚卸し（対外公開前は必須）。
+- デスクトップの「Hermes再起動.command」「Hermes不調サポート.md」も owner の自己保守ツール。
+
 ## 重要な落とし穴（dogfood 実証）
 - Discord 許可は**数値の User ID**（username は解決失敗で未認可のまま）。ID は初回送信後の gateway.log の `Unauthorized user: <ID>` から取る。
 - gateway が読む .env は **`~/.hermes/.env`**（hermes-agent/.env ではない）。人格は **`~/.hermes/SOUL.md`**。

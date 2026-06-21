@@ -24,4 +24,8 @@ for n in 00-preflight 10-install-hermes 20-auth-brain 30-discord-bot 40-persona 
   out="$(DRYRUN=1 bash "$DIR/scripts/$n.sh" "$DIR/forge.vars.example" 2>&1)"
   assert_contains "$out" "完了条件:" "$n prints 完了条件"
 done
+# v2: 運用スクリプト
+for s in 99-health-check memory-review; do
+  [ -x "$DIR/scripts/$s.sh" ] && assert_eq ok ok "$s exists+exec" || assert_eq missing ok "$s exists+exec"
+done
 assert_summary
