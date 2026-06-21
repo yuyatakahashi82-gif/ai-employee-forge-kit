@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# {{OWNER_NAME}} の AI社員（Hermes）再起動 — ダブルクリックで実行
+export PATH="$HOME/.local/bin:$PATH"
+hermes gateway restart 2>/dev/null || launchctl kickstart -k "gui/$(id -u)/ai.hermes.gateway"
+echo ""
+echo "✅ 再起動しました。30秒ほど待ってから Discord で話しかけてください。"
+echo "このウィンドウは閉じてOKです。"

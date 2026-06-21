@@ -1,0 +1,17 @@
+# ai-employee-forge パラメータ（対話の回答を埋める）。実体 forge.vars は .gitignore 済み想定。
+# 注意: 値に | や空白等のシェル特殊文字を含む場合は必ずダブルクォートで囲む（load_vars が source するため）。
+OWNER_NAME="REPLACE_OWNER_NAME"          # AI社員のowner名（owner本人の呼称）
+BUILDER_FORBIDDEN_PATTERNS="REPLACE_BUILDER_IDENTIFIERS"   # clean-exit検査用。構築者のusername/email-prefix/会社名を | 区切りで（例: alice|alice@ex|acmecorp）
+HERMES_HOME="$HOME/.hermes"
+BRAIN_PROVIDER="openai-codex"        # 脳: ChatGPTログイン認証(課金ゼロ)
+FALLBACK_PROVIDER="xai-oauth"        # fallback: X Premiumログイン認証
+FALLBACK_MODEL="grok-4.3"
+PERSONA_TYPE="digital-twin"          # digital-twin | assistant
+PERSONA_PROMPT_FILE="$HOME/.hermes/persona/owner.md"
+PERSONALITY="helpful"
+MEMORY_WRITE_APPROVAL="false"
+MEMORY_USER_PROFILE="true"
+DISCORD_SERVER_VISIBILITY="private"  # private | community | public
+SELF_MAINTENANCE="three-layer"       # three-layer | full-auto
+TOOLS_SCOPE="minimal"                # minimal | extended
+ACCESS_AFTER="zero-exit"             # zero-exit | managed

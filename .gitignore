@@ -1,0 +1,11 @@
+# ハーネス状態ファイルの混入防止（サブエージェントの git add -A 対策）
+.claude/
+.DS_Store
+
+# 実行時に生成される秘匿物（テンプレ展開後の実体は配布物に含めない）
+*.local
+*.secret
+auth.json
+.env
+# forge.vars 実体（個人パターン/将来の機微値）。forge.vars.example のみコミットする
+forge.vars
