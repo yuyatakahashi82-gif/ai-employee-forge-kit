@@ -12,6 +12,8 @@ Discord 常駐・自動学習メモリ・自己保守（自動再起動）まで
 - owner 本人の ChatGPT(Plus)。Discord bot を立てる owner の Discord アカウント
 - Claude Code か Codex 等、shell を実行できる AI エージェント（このプレイブックを実行する側）
 
+はじめての方（実行エージェント未導入）は [ONBOARDING.md](./ONBOARDING.md) から。
+
 ## クイックスタート
 1. `cp forge.vars.example forge.vars` し回答を埋める
 2. `PLAYBOOK.md` の (B) に沿って `scripts/` を順に実行（まず `DRYRUN=1`）
